@@ -1,0 +1,2 @@
+This is a test string 
+Having multiple f.write statements will make it continue writing where it left off

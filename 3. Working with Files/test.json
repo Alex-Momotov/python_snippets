@@ -1,0 +1,17 @@
+[
+     {
+          "title": "Linux/Mac Terminal Tutorial: The Grep Command \u2013 Search Files and Directories for Patterns of Text",
+          "body": "In this Linux/Mac terminal tutorial, we will be learning how to use the grep command. The grep command allows us to search files and directories for patterns of text.",
+          "time": "March 19, 2018"
+     },
+     {
+          "title": "How to Run Linux/Bash on Windows 10 Using the Built-In Windows Subsystem for Linux",
+          "body": "In this video, we will be learning how to run Linux on Windows using the new Windows Subsystem for Linux that comes with Windows 10. This is an excellent way to run Bash on a Windows machine. It allows you to use all of the Bash commands we are used to using on Linux within a Windows system. We will be showing how to enable and install Linux on Windows and also go over a quick overview to see how this works. Let\u2019s get started\u2026",
+          "time": "March 15, 2018"
+     },
+     {
+          "title": "Python Tutorial: Calculate Number of Days, Weeks, or Months to Reach Specific Goals",
+          "body": "In this Python Programming Tutorial, we will be writing three different scripts to estimate how long it will take to reach certain goals. Our first script will calculate how many months it will take us to pay off a credit card. Our second script will calculate how many weeks it will take to lose a certain amount of weight. And our third script will estimate how long it will take to reach a certain number of subscribers. Let\u2019s get started\u2026",
+          "time": "March 12, 2018"
+     }
+]

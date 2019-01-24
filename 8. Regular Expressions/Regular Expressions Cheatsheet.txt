@@ -1,0 +1,141 @@
+MetaCharacters (Need to be escaped with backslash in order to be searched):
+.[{()\^$|?*+
+
+.       - Any Character Except New Line
+\d      - Digit (0-9)
+\D      - Not a Digit (0-9)
+\w      - Word Character (a-z, A-Z, 0-9, _)
+\W      - Not a Word Character
+\s      - Whitespace (space, tab, newline)
+\S      - Not Whitespace (space, tab, newline)
+
+Anchor characters:
+\b      - Word Boundary
+\B      - Not a Word Boundary
+^       - Beginning of a String
+$       - End of a String
+
+Character sets:
+[]      - Matches Characters in brackets
+[^ ]    - Matches Characters NOT in brackets
+[a-z]   - Range of characters
+
+Groups:
+|       - Either Or
+( )     - Group
+(a|ab)  - Group of characters
+
+Quantifiers:
+*       - 0 or More
++       - 1 or More
+?       - 0 or One
+{3}     - Exact Number
+{3,4}   - Range of Numbers (Minimum, Maximum)
+
+
+#### Sample Regexs ####
+
+Simple search for literal characters:
+abc
+
+Dot matches any character except for newline:
+.
+
+To search for dot we need to escape it:
+\.
+
+To search for any metacharacters we need to escape them using backslash:
+\.\[\?\*\\
+
+Simple search for an email:
+coreyms\.com
+
+Search for 'Ha' which starts and ends with a word boundary:
+\bHa\b
+
+Match 'Ha' only if it is at the end of a string:
+Ha$
+
+Match 'Ha' only if it is at the beginning of a string:
+^Ha
+
+Match phone numbers with 3 digits then 3 digits then 4 digits:
+\d{3}.\d{3}\d{4}
+\d\d\d.\d\d\d.\d\d\d\d
+
+Character sets search for ANY characters within the set.
+They stop after finding the first character by default.
+To search for more than a single character within character set, use quantifiers.
+Here we search for 3 digits then a hyphen or a dot then 3 more digits:
+\d\d\d[-.]\d\d\d
+
+Search for numbers starting with either 9 or 8:
+[89]\d\d[-]\d\d\d[-]\d\d\d\d
+
+Dash '-' is also a special character within the character set.
+It specifies range of characters.
+Range of all lowercase letters:
+[a-z]
+
+Range of all lowercase and uppercase letters:
+[a-zA-Z]
+
+Range of numbers:
+[0-9]
+
+Search for words 'cat', 'mat', 'pat' but not 'bat'
+[^b]at
+
+Search for between 3 and 8 digits in a row:
+\d{3,8}
+
+Another special character within character set is caret '^' put in the beginning.
+It negates the set and matches everything not in the character set.
+Search for everything which is not a lowercase letter:
+[^a-z]
+
+The question mark specifies zero or one ocurrance.
+Search for 'Mr.' or 'Mr':
+Mr\.?
+
+\w matches any word character.
+* is a quantifier meaning zero or more.
+Search for 'Mr' or 'Mr.' followed by Second name
+Mr\.?\s[A-Z]\w*
+
+Groups are used to match any character or sequence of characters
+Match 'Mr', 'Ms', 'Mrs':
+M(r|s|rs)
+
+Match 'Mr', 'Ms', 'Mrs' followed by a space and a second name:
+M(r|s|rs)\.?\s[A-Z]\w*
+
++ is a quantifier which specifies 'one or more' characters
+Search for one or more uppercase or lowercase letters
+[a-zA-Z]+
+
+Simple search for emails ending with '.com':
+The dot in the first character set because email sometimes conntains dot beween first and second names
+[a-zA-Z.]+@[a-zA-Z]+\.com
+
+Search for emails which have dash or number in the first part and a diffenrent domain e.g. com, edu, net
+[a-zA-Z.-0-9]+@[a-zA-Z-]+\.(com|edu|net)
+
+Will match all emails:
+[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+
+
+To match 'http://' or 'https://':
+https?://
+
+An entire group of characters can be optional or used with quantifier.
+Search for 'http://' or 'https://' with an optional 'www.' and a website
+https?://(www\.)?\w+\.\w+
+
+We can put our regular expression in groups which will allow to later return a specific group number:
+In the 'replace' field of Atom or Pycharm you can write group numbers after the dollar sign '$' to return specific group.
+https?://(www\.)?(\w+)(\.\w+)
+$0      Zero group returns entire match
+$1      Will return 'www.' if it exists
+$2      Will return website name
+$3      Will return domain name
+$2$3    Will return website and domain names
