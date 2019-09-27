@@ -7,7 +7,7 @@ d1 = {'Jack':1234, 'Amy':23094, 'Emily':2394}
 d3 = dict(adsifk=23421, sadf=21341, momermf=23412)
 
 # [WAY 3] Dictionary comprehension
-d2 = {x:(x-5) for x in range(10)}
+d2 = {x:x-5 for x in range(10)}
 
 # [WAY 4] Using dict() function on a sequence of pairs, e.g. list of lists, tuple of tuples
 d4 = dict([['Jack', 1234], ['Amy', 23094], ['Emily', 2394]])
