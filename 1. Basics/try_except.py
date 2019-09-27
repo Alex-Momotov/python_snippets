@@ -41,9 +41,9 @@ except Exception as e:
 #   For example, we only want to read a file if it opened successfully.
 #   Change 'file.txt' to 'test.txt' to see the difference.
 import os
-os.chdir("C:\\Users\Sasha\Coding\Python\\0. Learning Python\\1. Basics")
+os.chdir("/Users/omomotov/Documents/my_projects/python_snippets/1. Basics")
 try:
-    f = open('file.txt', 'r')
+    f = open('test.txt', 'r')
 except FileNotFoundError as e:
     print(e)
 except Exception as e:
