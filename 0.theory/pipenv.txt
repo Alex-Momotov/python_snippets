@@ -1,0 +1,42 @@
+------------------------------------------------------------------------------------------
+	CHEAT SHEET
+pipenv install
+pipenv shell
+pipenv run <command>
+exit
+pipenv --venv
+pipenv --rm
+
+------------------------------------------------------------------------------------------
+	PYCHARM
+1. Do "pipenv install" in the desired project sub-directory.
+2. Open Project Interpreter menu and add New Virtual Environment.
+3. Specify path to Python interpreter where pipenv created it: /Users/omomotov/.local/share/virtualenvs/MyEnvironment/bin/python
+
+------------------------------------------------------------------------------------------
+pipenv install
+
+Create a virtual environment associated with current folder, if one doens't already exist. Automatically generates Pipfile and Pipfile.lock files in current folder. Environment itself is created in /Users/omomotov/.local/share/virtualenvs with the name of the current folder. Also used to create environment from existing Pipfile files.
+------------------------------------------------------------------------------------------
+pipenv shell
+
+Activate environment associated with current folder. If folder does not contain Pipfile and Pipfile.lock, new environment will be created in current folder in same way as "pipenv install".
+------------------------------------------------------------------------------------------
+pipenv run <command>
+
+Run a command from environment in current folde, without explicitly activating it first.
+------------------------------------------------------------------------------------------
+exit
+
+Exit current environment shell and deactivate the environment.
+------------------------------------------------------------------------------------------
+pipenv --venv
+
+Display directory where virtual environment associated with current folder is located.
+------------------------------------------------------------------------------------------
+pipenv --rm
+
+Remove environment assiciated with current folder from /Users/omomotov/.local/share/virtualenvs. Need to make sure the folder completely disappeared.
+
+------------------------------------------------------------------------------------------
+
