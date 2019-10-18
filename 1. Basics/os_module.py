@@ -38,14 +38,14 @@ print(datetime.fromtimestamp(modification_time))
 
 #%% os.walk() or os.walk(path) Traverses through all files and folders within
 #   the current or specified path and returns them as an iteratable triple.
-for dirpath, dirnames, filenames in os.walk("C:\\Users\Sasha\Pictures"):
+for dirpath, dirnames, filenames in os.walk("/Users/omomotov/work/projects_my/python_snippets/.idea"):
     print('Current Path:', dirpath)
     print('Directories:', dirnames)
     print('Files:', filenames)
     print()
 
 #%% os.environ Prints out all environment variables
-print(os.environ.get('USERDOMAIN'))
+for item in os.environ.items(): print(item[0], item[1])
 
 #%% os.path.join(path1, path2) Returns a string of two paths joined.
 #   It doesn't necessarily mean the path will exist, it just concatenates two paths.
