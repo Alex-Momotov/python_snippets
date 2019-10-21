@@ -6,7 +6,7 @@
 from bs4 import BeautifulSoup
 import requests
 import os
-os.chdir("C:\\Users\Sasha\Coding\Python\\0. Learning Python\\4. BeautifulSoup")
+os.chdir("C:\\Users\Sasha\Coding\Python\\0. Learning Python\\4_beautiful_soup")
 
 source = requests.get('http://coreyms.com/')
 print(source)
@@ -109,7 +109,7 @@ import requests
 import csv
 import os
 
-os.chdir("C:\\Users\\Sasha\\Coding\\Python\\0. Learning Python\\4. BeautifulSoup")
+os.chdir("C:\\Users\\Sasha\\Coding\\Python\\0. Learning Python\\4_beautiful_soup")
 
 source = requests.get('http://coreyms.com/').text
 soup = BeautifulSoup(source, 'lxml')

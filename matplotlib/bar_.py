@@ -1,6 +1,6 @@
 import matplotlib.pyplot as plt
 import os
-os.chdir("C:\\Users\Sasha\Coding\Python\\0. Learning Python\\6. Matplotlib")
+os.chdir("C:\\Users\Sasha\Coding\Python\\0. Learning Python\\matplotlib")
 
 #%% plt.bar(categories, height)
 #   Plots bar chart. Categories can be strings or numbers.

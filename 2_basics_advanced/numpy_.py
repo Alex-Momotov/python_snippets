@@ -1,7 +1,7 @@
 from memory_profiler import memory_usage
 import numpy as np
 import os
-os.chdir("C:\\Users\Sasha\Coding\Python\\0. Learning Python\\2. Basics (bit more advanced)")
+os.chdir("C:\\Users\Sasha\Coding\Python\\0. Learning Python\\2_basics_advanced")
 
 #%% 1st way to create Numpy array.
 #   np.array(list, dtype=)      Converts list or tuple structure into numpy array.

@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
 import os
-os.chdir("C:\\Users\Sasha\Coding\Python\\0. Learning Python\\2. Basics (bit more advanced)")
+os.chdir("C:\\Users\Sasha\Coding\Python\\0. Learning Python\\2_basics_advanced")
 
 #%% pd.DataFrame(dict)
 #   Makes a pandas dataframe from a dictionary. Naming a dataframe as 'df' is a convention.

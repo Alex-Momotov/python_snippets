@@ -61,7 +61,7 @@ plt.show()
 #   Supported formats are: eps, pdf, pgf, png, ps, raw, rgba, svg, svgz
 #   plt.savefig() statement should come before plt.show() else saved figure will be blank.
 import os
-os.chdir("C:\\Users\Sasha\Coding\Python\\0. Learning Python\\6. Matplotlib")
+os.chdir("C:\\Users\Sasha\Coding\Python\\0. Learning Python\\matplotlib")
 x, y = [1,2,3], [8,2,6]
 plt.plot(x,y)
 plt.savefig('test.png')
@@ -153,7 +153,7 @@ plt.show()
 #   Your x-values is the spaced values, your x-values is the function on them.
 import math
 import os
-os.chdir("C:\\Users\Sasha\Coding\Python\\0. Learning Python\\6. Matplotlib")
+os.chdir("C:\\Users\Sasha\Coding\Python\\0. Learning Python\\matplotlib")
 
 x = [i/10 for i in range(0,140,1)]
 y1 = [math.sin(i) for i in x]

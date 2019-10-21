@@ -26,7 +26,7 @@ print(find(K,3))
 #   You can append a path to sys.path by using sys.path.append to import a module from a separate folder
 import sys
 print(sys.path)
-sys.path.append('C:\\Users\\Sasha\\Coding\\Python\\0.0 Learning Python\\1. Basics\\imp_testing.py')
+sys.path.append('C:\\Users\\Sasha\\Coding\\Python\\0.0 Learning Python\\1_basics\\imp_testing.py')
 print(sys.path)
 
 #%% Random library

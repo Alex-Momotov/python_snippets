@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 import matplotlib as mpl
 import os
-os.chdir("C:\\Users\Sasha\Coding\Python\\0. Learning Python\\6. Matplotlib")
+os.chdir("C:\\Users\Sasha\Coding\Python\\0. Learning Python\\matplotlib")
 
 #%% plt.pie(slice_values)
 #   Creates a simple pie chart defined by values in the given array slice_values.
