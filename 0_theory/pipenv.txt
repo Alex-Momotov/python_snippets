@@ -16,11 +16,12 @@ pipenv --rm
 ------------------------------------------------------------------------------------------
 pipenv install
 
-Create a virtual environment associated with current folder, if one doens't already exist. Automatically generates Pipfile and Pipfile.lock files in current folder. Environment itself is created in /Users/omomotov/.local/share/virtualenvs with the name of the current folder. Also used to create environment from existing Pipfile files.
+Create a virtual environment associated with current directory, if one doens't already exist. Automatically generates Pipfile and Pipfile.lock files in current directory. 
+Environment itself is created in /Users/omomotov/.local/share/virtualenvs with the name of the current folder. Also used to create environment from existing Pipfile files.
 ------------------------------------------------------------------------------------------
 pipenv shell
 
-Activate environment associated with current folder. If folder does not contain Pipfile and Pipfile.lock, new environment will be created in current folder in same way as "pipenv install".
+Activate environment associated with current directory. If directory does not contain Pipfile and Pipfile.lock, new environment will be created in current directory in same way as "pipenv install".
 ------------------------------------------------------------------------------------------
 pipenv run <command>
 
@@ -32,11 +33,11 @@ Exit current environment shell and deactivate the environment.
 ------------------------------------------------------------------------------------------
 pipenv --venv
 
-Display directory where virtual environment associated with current folder is located.
+Display directory where virtual environment associated with current directory is located.
 ------------------------------------------------------------------------------------------
 pipenv --rm
 
-Remove environment assiciated with current folder from /Users/omomotov/.local/share/virtualenvs. Need to make sure the folder completely disappeared.
+Remove environment assiciated with current directory from /Users/omomotov/.local/share/virtualenvs. Need to make sure the directory completely disappeared.
 
 ------------------------------------------------------------------------------------------
 
