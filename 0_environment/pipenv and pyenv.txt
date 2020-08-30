@@ -1,0 +1,181 @@
+------------------------------------------------------------------------------------------------------------------------
+    CHEATSHEET
+
+______________________________________
+    Create, remove env
+pipenv install          Empty dir:      Create new virt env and associate it with current dir (if it doesn't exit). Generates Pipfile and Pipfile.lock.
+                        From Pipfile:   Create new virt env with packages and python ver specified in Pipfile, and associate it with current dir (if it doesn't exit).
+                        Virt env is created in ~/.local/share/virtualenvs/ (MacOS) with name <dir>-<hash> where dir is current project dir and hash is the hash of the full path to that dir.
+                        If the project requires specific Python ver and you're prompted to install it on your system, type 'no' and install it with pyenv.
+
+pipenv install --python <ver>       Create virt env with specific version of Python.
+                                    If such version does not exist on your system it will prompt you to install it.
+                                    Type 'no', and install the version with pyenv instead.
+
+pipenv --rm             Remove environment assiciated with current dir (removes it from ~/.local/share/virtualenvs/).
+                        Ensure virt env dir has disappeared. Do 'rm -rf' if needed.
+
+
+______________________________________
+    Show info about env
+pipenvs                         List pipenv virt envs on the computer. Alias for listing files in ~/.local/share/virtualenvs/.
+
+pipenv --venv                   Display dir where environment associated with current dir is located.
+
+pipenv run python --version     Show python version used by current pipenv env.
+
+pipenv run pip list             List packages installed in current pipenv env.
+
+
+______________________________________
+    Interact with env
+pipenv shell            Activate environment associated with current directory. If directory does not contain Pipfile and
+                        Pipfile.lock, new environment will be created in current directory in same way as "pipenv install".
+
+pipenv run <command>    Run command from inside env associated with current dir. No need to activate env first.
+
+
+______________________________________
+    Install, uninstall packages
+
+edit Pipfile            Add package or change package version under [packages] in Pipfile -> 'pipenv install'. Pipenv adds / changes package in virt env.
+                        Remove package under [packages] in Pipfile -> 'pipenv clean'. Pipenv removes package from virt env.
+                            requests = "*"          Latest package version.
+                            requests = "==2.2.1"    Specific package version.
+
+pipenv install <pkg>    Install package to environment associated with current dir, and add it to Pipfile.
+
+pipenv uninstall <pkg>  Uninstall package from environment associated with current dir, and remove it from Pipfile.
+
+pipenv clean            Uninstall packages not specified in Pipfile.
+
+pipenv graph            Prints package dependency graph. Lists all packages, under each package.
+
+
+______________________________________
+    Change Python version used by virt env
+- Will need to recreate virt env with a different Python version:
+  change version in Pipfile -> pipenv --rm -> pipenv install
+
+
+______________________________________
+    Moving project to different dir
+- Pipenv virt envs are created under ~/.local/share/virtualenvs with the name <dir>-<hash> where <dir> is dir name where virt env was created and <hash> is hash of the full path to that dir.
+- If you move project files to another dir, the current virt env will be orphaned, and doing 'pipenv install' will result in pipenv creating a brand new virt env with a different hash.
+- If you want to move project files to different dir: remove current virt env -> move project files -> create new virt env.
+
+
+______________________________________
+	New project - Pycharm
+1. 'pipenv install' in desired project dir or subdir. Use --python <ver> flag if you require specific Python version.
+   If your system doesn't have required Python version installed and you're prompted to install it, type 'no' and install it using 'pyenv'.
+2. Preferences -> Project Interpreter -> Add -> Virtual Environment -> existing environment ->
+   path to interpreter of new virt env '~/.local/share/virtualenvs/<ENVIRONMENT>/bin/python'.
+
+
+______________________________________
+    Pyenv - Install, uninstall Python versions
+pyenv versions          Lists Python versions. 'system' is OS's Python installation (on MacOS it is 2.7.16).
+
+pyenv install <ver>     Install given Python version. If installation fails on Mac, install latest Xcode.app or Xcode Command Line Tools compatible with your MacOS version.
+pyenv uninstall <ver>   Uninstall given version.
+
+pyenv shell <version>   Switch to given version for the current terminal session.
+
+python --version        Verify version of currently selected installation.
+which python            Locate executable of currently acvive python.
+
+
+______________________________________
+    Summary of managing Python environment
+1. Manage Python installations with 'pyenv'.
+2. Manage Python virt envs and dependencies with 'pipenv'.
+3. Specify required python version in Pipfile or with 'pipenv install --python'.
+4. If pipenv complains that your system doesn't have required Python version installed, and prompts you to install it, type 'no' and install it using 'pyenv'.
+   After installing needed version with 'pyenv', retry creating pipenv virt env, and pipenv will automatically discover the new Python version.
+
+
+# ----------------------------------------------------------------------------------------------------------------------
+# ----------------------------------------------------------------------------------------------------------------------
+# ----------------------------------------------------------------------------------------------------------------------
+    THEORY
+
+
+    Python ecosystem components
+------------------------------------------------------------------------------------------------------
+Component:                          Managed by:         Example:
+------------------------------------------------------------------------------------------------------
+1. Python installation              pyenv               Python 3.7.7, Python 2.7.0
+2. Python virtual environments      pipenv              ~/.local/share/virtualenvs/qatests-56IIr-1M
+3. Python dependencies              pipenv              requests, pandas, pip, pytest
+------------------------------------------------------------------------------------------------------
+
+
+    Pyenv
+Tool for managing python installations on Mac and Linux. Avoids you messing up you OS python. Works well together with pipenv.
+brew install pyenv      Install pyenv.
+pyenv init              Initialise pyenv. The command will print output asking you to add a line to your ~/.bashrc. You need to do that.
+
+
+
+    Pipenv
+Before pipenv there existed separate tools for managing python virt envs, and python packages.
+    venv - tools for managing virt envs.
+    pip, pip3 - tools for managing dependencies.
+Pipenv (as the name suggests) supports management of both virt envs and packages, all in one neat tool.
+
+
+
+    What is virt env?
+Virtual environment - Isolated runtime environment, that allows installing Python packages without interfering with the
+                      behaviour of other Python applications running on the same system.
+Runtime environment - A set of hardware, OS, and software components (loose term environment) which together support execution of a process/program.
+                      Hardware components:      cpu, RAM, network card, cables ...
+                      Software components:      Python installation, JRE (Java virtual machine), binaries ...
+                      OS components:            Env vars, sockets, files on filesystem, hardware drivers ...
+
+
+
+    Pipfile
+Describes python version and packages required in pipenv virt environment. Meant to be edited by hand.
+Used by pipenv as an instruction of how to build the environment from scratch.
+Pipfile is written in 'toml' format, which defines key-value pairs, and sections.
+Sections:
+    [[source]]      Source where pipenv downloads dependencies from.
+    [packages]      Packages and versions required by our project.
+                    "*" means any version - pipenv will download the latest version if available.
+                    Replace "*" with an exact version if you want a specific dependency version.
+    [dev-packages]  Packages installed for dev only (such as pytest). Will not be used in production.
+                    Use '--dev' when doing 'pipenv install' to install those.
+    [requires]      Specifies required python version.
+
+
+
+    Pipfile.lock
+Contains exact versions and hashes of packages and transitive packages, enabling pipenv to build virt env deterministically.
+Not meant to be edited manually.
+
+
+
+    Pipfile vs Pipfile.lock
+Pipfile         Python version. Package versions. Source to download packages.
+Pipfile.lock    Package versions and hashes. Transitive package versions and hashes.
+
+
+
+    Cli tools as env packages (pip, pytest)
+Some packages installed in virt env are actually cli tools, and can be invoked when the env is activated.
+pip and pytest are examples of such tools.
+
+
+
+    Pip as OS's package manager
+Using pip to install packages from within activated virt env will install them into that virt env.
+However, you should do 'pipenv install <pkg>' instead, since pipenv also acts as a package manager.
+
+Using pip to install packages outside a virt env will install them on the OS's python. This is why you can install
+some MacOS programs using 'pip install <program>'. Note, run 'which python', and 'which pip' to ensure you're
+installing them onto the right python interpreter. Double check if you have python=python3 and pip=pip3 aliases.
+
+
+# ----------------------------------------------------------------------------------------------------------------------

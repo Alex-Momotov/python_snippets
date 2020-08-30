@@ -1,5 +1,5 @@
 MetaCharacters (Need to be escaped with backslash in order to be searched):
-.[{()\^$|?*+
+.[{(\^$|?*+
 
 .       - Any Character Except New Line
 \d      - Digit (0-9)
@@ -60,6 +60,7 @@ Match 'Ha' only if it is at the beginning of a string:
 ^Ha
 
 Match phone numbers with 3 digits then 3 digits then 4 digits:
+123-321-1234
 \d{3}.\d{3}\d{4}
 \d\d\d.\d\d\d.\d\d\d\d
 

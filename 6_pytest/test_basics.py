@@ -5,14 +5,19 @@
 # Test class    Must begin with 'Test'
 
 #   Pytest In Pycharm
-# Preferences -> Python Integrated Tools -> Default test runner -> pytest
-# This will enable green arrows next to test functions.
+# 1. Preferences -> Python Integrated Tools -> Default test runner -> pytest. This will enable green arrows next to test functions.
+# 2. Pycharm automatically adds project root dir to PYTHONPATH. Run configuration ... -> "Add ... to PYTHONPATH" (both boxes).
+
+# 	Pytest from terminal
+# 1. Add project dir to PYTHONPATH env var. E.g. PYTHONPATH=$PYTHONPATH:foo/bar in ~/.bashrc.
+# 2. 'pipenv shell' To activate project environment. The environment must have pytest installed.
 
 #   Commands
-# pytest                Runs pytest in all files in current dir and subdirs.
-# pytest test_cat.py    Runs pytest in the file.
-# pytest -m <mark>      Runs only tests with given mark.
-# pytest -k <substring> Runs only tests with given substring in test/class name.
+# pytest                Pytest in all files in current dir and subdirs.
+# pytest <dir>          Pytest in dir and its subdirs.
+# pytest <file>    		Pytest in the file.
+# -m <mark>      		Only tests with given mark.
+# -k <substring> 		Only tests with given substring in test/class name.
 
 # ----------------------------------------------------------------------------------------------------------------------
 #   Sample Tests
