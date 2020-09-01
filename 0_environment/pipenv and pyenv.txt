@@ -115,10 +115,11 @@ which python            Locate executable of currently acvive python.
 
 ______________________________________
     Summary of managing Python environment
-1. Manage Python installations with 'pyenv'.
-2. Manage Python virt envs and dependencies with 'pipenv'.
-3. Specify required python version in Pipfile or with 'pipenv install --python'.
-4. If pipenv complains that your system doesn't have required Python version installed, and prompts you to install it, type 'no' and install it using 'pyenv'.
+1. Use python3 installed via brew ('python3' and 'pip3') to install cli commands on your MacOS, and as dependency to other brew tools.
+2. Manage Python installations for virt envs with 'pyenv'.
+3. Manage Python virt envs and dependencies with 'pipenv'.
+4. Specify required python version in Pipfile or with 'pipenv install --python'.
+5. If pipenv complains that your system doesn't have required Python version installed, and prompts you to install it, type 'no' and install it using 'pyenv'.
    After installing needed version with 'pyenv', retry creating pipenv virt env, and pipenv will automatically discover the new Python version.
 
 
