@@ -21,13 +21,13 @@ pipenv --rm             Remove environment assiciated with current dir (removes 
 
 ______________________________________
     Show info about env
-pipenvs                         List pipenv virt envs on the computer. Alias for listing files in ~/.local/share/virtualenvs/.
+pipenvs                         	List pipenv virt envs on the computer. Alias for listing files in ~/.local/share/virtualenvs/.
 
-pipenv --venv                   Display dir where environment associated with current dir is located.
+pipenv --venv                   	Display dir where environment associated with current dir is located.
 
-pipenv run python --version     Show Python version used by current virt env.
+pipenv run python --version     	Show Python version used by current virt env.
 
-pipenv run which python         Show Python installation used by current virt env.
+ls -la $(pipenv run which python)	Show Python installation used by current virt env. Look at where sim link points to.
 
 
 ______________________________________
@@ -76,10 +76,10 @@ Will need to recreate virt env with a different Python version:
 
 
 ______________________________________
-    Moving project to different dir
-- Pipenv virt envs are created under ~/.local/share/virtualenvs with the name <dir>-<hash> where <dir> is dir name where virt env was created and <hash> is hash of the full path to that dir.
-- If you move project files to another dir, the current virt env will be orphaned, and doing 'pipenv install' will result in pipenv creating a brand new virt env with a different hash.
-- If you want to move project files to different dir: remove current virt env -> move project files -> create new virt env.
+    Moving project to different dir OR renaming project dir
+- Pipenv virt envs are created under ~/.local/share/virtualenvs/ with the name <dir>-<hash> where <dir> is dir name where virt env was created and <hash> is hash of the full path to that dir.
+- If you move project files to another dir, or rename project directory, the current virt env will be orphaned, and doing 'pipenv install' will result in pipenv creating a brand new virt env with a different hash.
+- If you want to move project files to different dir: remove current virt env -> move project files OR rename project dir -> create new virt env.
 
 
 ______________________________________
