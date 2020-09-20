@@ -80,8 +80,9 @@ print(matches)
 #%% pattern.sub(repl, text)
 #   Returns original string text, but the matched substrings found with the pattern are replaced with repl string.
 #   Within the repl string we can reference groups of matched pattern by using backslash+gr_num e.g. r'\2\3'
+text = "https://www.google.com"
 pattern = re.compile(r'https?://(www\.)?(\w+)(\.\w+)')
-subbed_text = pattern.sub(r'This is a replacement \2\3', text)
+subbed_text = pattern.sub(r'This is a replacement', text)
 print(subbed_text)
 
 #%% pattern.match(text)
