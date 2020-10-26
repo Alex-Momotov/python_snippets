@@ -6,7 +6,7 @@
 from bs4 import BeautifulSoup
 import requests
 import os
-os.chdir("C:\\Users\Sasha\Coding\Python\\0. Learning Python\\4_beautiful_soup")
+os.chdir("C:\\Users\Sasha\Coding\Python\\0. Learning Python\\beautiful_soup")
 
 with open('simple.html', 'r') as html_file:
     soup = BeautifulSoup(html_file, 'lxml')

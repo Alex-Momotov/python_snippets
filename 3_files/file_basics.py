@@ -9,7 +9,7 @@
 #   'wb'    writing binary files
 #   f.close() Closes the file. We must always close the file.
 import os
-os.chdir("C:\\Users\Sasha\Coding\Python\\0. Learning Python\\3_working_with_files")
+os.chdir("C:\\Users\Sasha\Coding\Python\\0. Learning Python\\3_files")
 
 
 f = open('test.txt', 'r')

@@ -2,7 +2,7 @@ import h5py
 import numpy as np
 import os
 from memory_profiler import memory_usage as memory
-os.chdir("C:\\Users\Sasha\Coding\Python\\0. Learning Python\\3_working_with_files")
+os.chdir("C:\\Users\Sasha\Coding\Python\\0. Learning Python\\3_files")
 
 #%% An HDF5 file is a container for two kinds of objects: datasets, which are array-like collections of data, and
 #   groups, which are folder-like containers that hold datasets and other groups. Groups work like dictionaries, and

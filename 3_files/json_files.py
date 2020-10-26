@@ -36,7 +36,7 @@ print(type(data))
 #   manager. Optional parameter is indent=3 to make the file more readable in a text editor.
 import json
 import os
-os.chdir("C:\\Users\Sasha\Coding\Python\\0. Learning Python\\3_working_with_files")
+os.chdir("C:\\Users\Sasha\Coding\Python\\0. Learning Python\\3_files")
 
 articles = [
     {'title' : "Linux/Mac Terminal Tutorial: The Grep Command – Search Files and Directories for Patterns of Text",
@@ -57,7 +57,7 @@ with open('test.json', 'w') as f:
 #   Returns a deserialized object from a json file. First the .json file is opened using context manager.
 import json
 import os
-os.chdir("C:\\Users\Sasha\Coding\Python\\0. Learning Python\\3_working_with_files")
+os.chdir("C:\\Users\Sasha\Coding\Python\\0. Learning Python\\3_files")
 
 with open('test.json', 'r') as f:
     articles = json.load(f)

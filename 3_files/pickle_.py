@@ -1,5 +1,5 @@
 import os
-os.chdir('C:\\Users\Sasha\Coding\Python\\0. Learning Python\\3_working_with_files')
+os.chdir('C:\\Users\Sasha\Coding\Python\\0. Learning Python\\3_files')
 
 #%% To pickle a Python object
 #   Step 1 - Import pickle
