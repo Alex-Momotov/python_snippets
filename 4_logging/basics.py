@@ -44,5 +44,8 @@ log.basicConfig(
     format='%(asctime)s:%(levelname)s:%(message)s',
     handlers=[log.StreamHandler(sys.stdout), log.FileHandler("output.log")])
 
+# By default upon each start of the program logger will append to same file from previous launch.
+# To delete old log file at each restart add mode='w' as FileHandler option.
 
 
+# ----------------------------------------------------------------------------------------------------------------------
