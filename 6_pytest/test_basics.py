@@ -16,8 +16,8 @@
 # pytest                Pytest in all files in current dir and subdirs.
 # pytest <dir>          Pytest in dir and its subdirs.
 # pytest <file>    		Pytest in the file.
-# -m <mark>      		Only tests with given mark.
-# -k <substring> 		Only tests with given substring in test/class name.
+# -m "<mark>"      		Only tests with given mark.
+# -k "<substring>" 		Only tests with given substring in test/class name.
 
 # ----------------------------------------------------------------------------------------------------------------------
 #   Sample Tests
