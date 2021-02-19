@@ -1,0 +1,16 @@
+
+# Installation
+brew install pyenv      # Install pyenv.
+pyenv init              # Initialise pyenv. The command will print output asking you to add a line to your ~/.bashrc. You need to do that.
+
+# Usage
+pyenv versions          # Lists Python versions. 'system' is OS`s Python installation (on MacOS it is 2.7.16).
+
+pyenv install <ver>     # Install given Python version. If installation fails on Mac, install latest Xcode.app or Xcode Command Line Tools compatible with your MacOS version.
+pyenv uninstall <ver>   # Uninstall given version.
+
+pyenv shell <version>   # Switch to given version for the current terminal session.
+
+python --version        # Verify version of currently selected installation.
+which python            # Locate executable of currently acvive python.
+

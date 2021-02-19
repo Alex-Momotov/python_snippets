@@ -1,0 +1,11 @@
+
+# Installation
+pipenv install notebook
+
+# Usage
+pienv shell
+jupyter notebook     # Takes you to localhost:8888 where notebook is running
+
+# Tips
+object.method?      # Show documentation of a method, by typing '?'
+Shift               # Code completion options
