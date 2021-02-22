@@ -1,11 +1,16 @@
 # _____________________________________________________________________________________________
+# Important
+pipenv install --skip-lock                      # Always pass --skip-lock when running pipenv install. Applies to both: installing new packages to existing env, and creating virt env from Pipfile or Pipfile.lock.
+pipenv install --skip-lock --ignore-pipfile     # Always pass --ignore-pipfile when building from existing Pipfile.lock to achieve deterministic build. Also pass --skip-lock.
+
+# _____________________________________________________________________________________________
 # Environments
 
 # Create env
 pipenv install          # If current dir has no Pipfile, creates new virt env and associates it with current dir, generating Pipfile and Pipfile.lock. If current dir has Pipfile, creates new virt env with packages and python ver specified in Pipfile.
-    --python <path>     # Use Python installation specified by path.
-    --python <ver>      # Use specific version of Python. If such version doesn't exist on the system, you're prompted to install it. Select 'no', and install it with pyenv.
+    --python <ver>      # Use specific version of Python. <ver> can be version or path to Python executable. If such version doesn't exist on the system, you're prompted to install it with pyenv.
     --ignore-pipfile    # Create virt env using Pipfile.lock instead of Pipfile. Use this option for production. Results in deterministic env build.
+    --skip-lock         # Skip locking stage. Massively speeds up package installation.
 
 # Remove env
 pipenv --rm         # Remove virt env assiciated with current dir. Gets removed from ~/.local/share/virtualenvs/. Run 'rm -rf' if dir wasn't removed.
@@ -26,6 +31,7 @@ pipenv run pip list     # List packages installed in current virt env.
 pipenv install pkg, pkg1, ..    # Install package(s) to virt env. Adds them to Pipfile and Pipfile.lock.
                                 # Alternatively add packages to Pipfile, and run 'pipenv install'.
                 --dev           # Install dev packages - those under [dev-packages] in Pipfile.
+                --skip-lock     # Skip locking stage. Massively speeds up package installation.
 
 # Packages - uninstall
 pipenv uninstall <pkg> && pipenv clean  # Uninstalls package from virt env, removes it from Pipfile and Pipfile.lock. 'pipenv clean' removes transitive packages that are no longer required.
@@ -68,7 +74,7 @@ Pipfile.lock    # Not meant to be edited manually. Contains exact versions and h
 # Tips
 
 # Environment location
-# On MacOS virt envs are created in ~/.local/share/virtualenvs/ with name <dir>-<hash> 
+# On MacOS virt envs are created in ~/.local/share/virtualenvs/ with name <dir>-<hash>
 # where dir is current project dir and hash is the hash of the full path to that dir.
 pipenvs                         	# List pipenv virt envs on the computer. Alias for listing files in ~/.local/share/virtualenvs/.
 pipenv --venv                   	# Display dir where environment associated with current dir is located.
