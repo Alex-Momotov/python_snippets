@@ -91,10 +91,11 @@ city_col[0:10]
 # Index column doesn't have to have unique values. If values unique df.loc will return Series. If not unique df.loc will return dataframe.
 # Usually though we want to set index using a column that has unique value for each record.
 
-df.set_index('Edition')     # Returns df copy indexed by 'Edition' column (year).       Pass inplace=True to index inplace.
-df.reset_index()            # Returns df copy indexed by the default number range.      Pass inplace=True to reset index inplace.
-df.sort_index()             # Returns df copy with records sorted by index.             Pass inplace=True to sort index inplace.
-                            #                                                           Pass ascending=False to sort index in descending order.
+df.set_index('Edition', inplace=True)   # Returns df copy indexed by 'Edition' column (year).
+df.reset_index(drop=True, inplace=True) # Returns df copy indexed by the default number range.
+                                        # Drop=True ensures the old index is not added as new column
+df.sort_index(inplace=True)             # Returns df copy with records sorted by index.
+                            #
 
 # Example
 df_by_year = df.set_index('Edition')    # Index df by year
