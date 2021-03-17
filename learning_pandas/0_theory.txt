@@ -1,0 +1,14 @@
+
+# Dataframe
+Think of a dataframe as a container for multiple Series objects. Where those Series objects have same length.
+Each column is a Series with values from 0 to N (number of records). First column is index.
+Each row is a Series and can be identified by index number.
+
+# Series
+Series is a one-dimensional array. Think of series as rows of a single column of a dataframe.
+Think of Series as a list, but with more functionality to it.
+
+# Filters
+Filter expressions return boolean arrays. Boolean arrays can be used to index dataframes and series.
+
+

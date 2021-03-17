@@ -4,7 +4,7 @@
 # with our 'with open() as f:' statement. The parser mode is recommended to be 'lxml' but there are other ones.
 
 from bs4 import BeautifulSoup
-import requests
+import learning_requests
 import os
 os.chdir("C:\\Users\Sasha\Coding\Python\\0. Learning Python\\beautiful_soup")
 

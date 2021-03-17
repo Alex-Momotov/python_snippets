@@ -1,27 +1,27 @@
 # Now that we are familiar with basics of bs4 module, we can substitute our simple.html file with a real file from
-# the web. The requests module can pull html code from a website for us.
+# the web. The learning_requests module can pull html code from a website for us.
 
-# requests.get(link)
+# learning_requests.get(link)
 # Takes a web link as an input and returns a 'response' object.
 from bs4 import BeautifulSoup
-import requests
+import learning_requests
 import os
 os.chdir("C:\\Users\Sasha\Coding\Python\\0. Learning Python\\beautiful_soup")
 
-source = requests.get('http://coreyms.com/')
+source = learning_requests.get('http://coreyms.com/')
 print(source)
 print(type(source))
 
 #%% if we pass .text attribute to our response object, it will return a string of the actual HTML code for that page.
-source = requests.get('http://coreyms.com/').text
+source = learning_requests.get('http://coreyms.com/').text
 print(source)
 print(type(source))
 
 #%% Therefore we can now substitute our simple.html file with this string containing html code to use with bs4 module.
 from bs4 import BeautifulSoup
-import requests
+import learning_requests
 
-source = requests.get('http://coreyms.com/').text
+source = learning_requests.get('http://coreyms.com/').text
 soup = BeautifulSoup(source, 'lxml')
 
 print(soup.prettify())
@@ -60,9 +60,9 @@ print(article.header.p.find('span', class_="entry-comments-link").a['href'])
 #%% This is a complete script to scrape title, summary and time for each article on a single page.
 
 from bs4 import BeautifulSoup
-import requests
+import learning_requests
 
-source = requests.get('http://coreyms.com/').text
+source = learning_requests.get('http://coreyms.com/').text
 soup = BeautifulSoup(source, 'lxml')
 
 for article in soup.find_all('article'):
@@ -82,9 +82,9 @@ for article in soup.find_all('article'):
 #   sometimes, then we want to pass None value to that variable.
 
 from bs4 import BeautifulSoup
-import requests
+import learning_requests
 
-source = requests.get('http://coreyms.com/').text
+source = learning_requests.get('http://coreyms.com/').text
 soup = BeautifulSoup(source, 'lxml')
 
 for article in soup.find_all('article'):
@@ -105,13 +105,13 @@ for article in soup.find_all('article'):
 #%% Here we perform the same operation as above, but instead of printing info about each article, we save it to csv
 
 from bs4 import BeautifulSoup
-import requests
+import learning_requests
 import csv
 import os
 
 os.chdir("C:\\Users\\Sasha\\Coding\\Python\\0. Learning Python\\beautiful_soup")
 
-source = requests.get('http://coreyms.com/').text
+source = learning_requests.get('http://coreyms.com/').text
 soup = BeautifulSoup(source, 'lxml')
 
 with open('articles.csv', 'w', newline='') as csv_file:

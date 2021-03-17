@@ -12,6 +12,7 @@ tabulate = "*"
 openpyxl = "*"
 pillow = "*"
 matplotlib = "*"
+requests = "*"
 
 [dev-packages]
 
