@@ -58,21 +58,19 @@ df['city'].value_counts(normalize=True)      # Percentage unique values
 df.isnull().sum()
 
 # ______________________________________________________________________________________________________________________
-# Group by
-# df.groupby(['col', 'col1']) returns GroupBy object, that can be used later.
+# Group by                           df.groupby(['col', 'col1']) returns GroupBy object, that can be used later.
 gr_city = df.groupby(['city'])       # group results by column(s)
 
-# Get group
-gr_city.get_group('Moscow')          # df subset where group is specific value
+# Get group                          Get df subset where group is specific value
+gr_city.get_group('Moscow')
 
-# Aggregate
-# General syntax: group_object['col_to_aggregate'].agg_function()
-gr_city['salary'].sum()              #
-gr_city['salary'].min()              #
-gr_city['salary'].max()              #
-gr_city['salary'].median()           #
-gr_city['salary'].mean()             #
-gr_city['salary'].std()              #
+# Aggregate                          General syntax: group_object['col_to_aggregate'].agg_function()
+gr_city['salary'].sum()
+gr_city['salary'].min()
+gr_city['salary'].max()
+gr_city['salary'].median()
+gr_city['salary'].mean()
+gr_city['salary'].std()
 
 gr_city['salary'].nlargest(3)        # N largest values from each group    (3 largest salaries from each city)
 gr_city['salary'].nsmallest(3)       # N smallest values from each group    (3 smallest salaries from each city)
@@ -80,7 +78,7 @@ gr_city['salary'].value_counts()     # count unique values for each group    (un
 
 # Aggregate - custom function
 # The custom function should take a sequence of values (Series) and return a single value (the aggregate).
-gr_city['salary'].apply(lambda ser : ser )
+gr_city['salary'].apply(lambda ser : sum(ser))
 
 # ______________________________________________________________________________________________________________________
 # Plotting examples

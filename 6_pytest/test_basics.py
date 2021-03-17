@@ -1,4 +1,33 @@
 # ----------------------------------------------------------------------------------------------------------------------
+#   Code structure (type 1)
+# Test directory layout mirrors src code dir layout
+#       src/
+#           __init__.py
+#           appmodule.py
+#           module1/
+#               part1.py
+#               part2.py
+#           ...
+#       tests/
+#           test_appmodule.py
+#           module1/
+#               test_part1.py
+#               test_part2.py
+
+#   Code structure (type 2)
+#       src/
+#           __init__.py
+#           appmodule.py
+#           tests/
+#               test_appmodule.py
+#           module1/
+#               part1.py
+#               part2.py
+#               tests/
+#                   test_part1.py
+#                   test_part2.py
+
+
 #   Pytest Naming
 # Test file     Must begin with 'test_'
 # Test method   Must begin with 'test'
