@@ -223,15 +223,64 @@ class TestFox:
         print('test_two')
 
 # ----------------------------------------------------------------------------------------------------------------------
+# ______________________________________________________________________________________________________________________
+# ______________________________________________________________________________________________________________________
+# CLASSIC XUNIT-STYLE SETUP
+
+# Module level setup/teardown
+# Called before and after all test methods in a module (current .py file)
+def setup_module(module):
+    """ setup any state specific to the execution of the given module."""
+
+def teardown_module(module):
+    """ teardown any state that was previously setup with a setup_module
+    method.
+    """
 
 
 
+# Class level setup/teardown
+# Called before and after all tests methods in a class
+@classmethod
+def setup_class(cls):
+    """ setup any state specific to the execution of the given class (which
+    usually contains tests).
+    """
+
+@classmethod
+def teardown_class(cls):
+    """ teardown any state that was previously setup with a call to
+    setup_class.
+    """
 
 
 
+# Test level setup/teardown (within class)
+# Called before and after each test - when tests are within class
+def setup_method(self, method):
+    """ setup any state tied to the execution of the given method in a
+    class.  setup_method is invoked for every test method of a class.
+    """
+
+def teardown_method(self, method):
+    """ teardown any state that was previously setup with a setup_method
+    call.
+    """
 
 
 
+# Test level setup/teardown (outside class)
+# Called before and after each test - when tests are outside class
+def setup_function(function):
+    """ setup any state tied to the execution of the given function.
+    Invoked for every test function in the module.
+    """
+
+
+def teardown_function(function):
+    """ teardown any state that was previously setup with a setup_function
+    call.
+    """
 
 
 
